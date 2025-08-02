@@ -38,7 +38,8 @@ export default function LoveNote() {
             <p className={styles.noteText}>
               Whether we're planning badminton rematches (best of 3!), having BBQTown or Sukiya dates, consulting ChatGPT 
               for relationship advice (our trusted third wheel 😂), or watching action movies (no romance - nanti awkward!), 
-              I'm excited for all our future adventures. Like you said, we'll take it one step at a time together. 
+              I'm excited for all our future adventures. And now, meeting your family at Warong Din with Mak, Apak, and Mun - 
+              another beautiful chapter in our story! Like you said, we'll take it one step at a time together. 
               In the name of the moon (and all the Sailor Guardians), let's keep writing our story together.
             </p>
             <p className={styles.signature}>
