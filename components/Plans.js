@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import styles from '../styles/Plans.module.css'
 import { CalendarIcon, MoonIcon, SparkleIcon, TransformationBrooch, CosmicHeartCompact } from '../utils/icons'
+import { LunaArtemisGuide } from './SailorMoonImages'
 
 export default function Plans({ nextDate }) {
   const [timeLeft, setTimeLeft] = useState({

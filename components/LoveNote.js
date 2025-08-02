@@ -31,8 +31,9 @@ export default function LoveNote() {
             <p className={styles.noteText}>
               Thank you for taking things at your pace, for your "sorry spam WhatsApp 😅" messages that always make me smile, 
               for being bangga to show my picture to your friends, and for being the Sarawakian-approved girl who makes 
-              every conversation feel like home. From our first Superman movie date to the bracelet that you wear, 
-              from flowers that remind me of you to becoming your phone wallpaper - you're in my thoughts every 15 minutes.
+              every conversation feel like home. From our first Hala Bala movie date at Kepong (and that unexpected powerbank gift!), 
+              to the Superman movie and bracelet, from flowers that remind me of you to becoming your phone wallpaper - 
+              you're in my thoughts every 15 minutes.
             </p>
             <p className={styles.noteText}>
               Whether we're planning badminton rematches (best of 3!), having BBQTown or Sukiya dates, consulting ChatGPT 
@@ -45,7 +46,8 @@ export default function LoveNote() {
               <span className={styles.name}>Amir</span>
             </p>
             <p className={styles.ps}>
-              P.S. - Still think I'm garang? 😉 And yes, I'll definitely talk this much when we meet!
+              P.S. - Told you I'm not garang! 😊 And yes, that powerbank still reminds me of you every time I use it. 
+              Thank you for all the thoughtful gifts - from powerbank to wallet, you always know how to make me smile! 🤍
             </p>
           </div>
           

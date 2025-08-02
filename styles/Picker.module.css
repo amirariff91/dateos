@@ -28,24 +28,50 @@
 
 .planetsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-lg);
-  margin-bottom: var(--space-3xl);
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (min-width: 480px) {
+  .planetsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+@media (min-width: 768px) {
+  .planetsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-bottom: var(--space-3xl);
+  }
 }
 
 .planetCard {
   background: var(--surface);
   border: 2px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   text-align: center;
   cursor: pointer;
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 480px) {
+  .planetCard {
+    padding: var(--space-xl);
+    min-height: 240px;
+  }
 }
 
 .planetCard::before {
@@ -86,17 +112,25 @@
   margin-bottom: var(--space-md);
   display: flex;
   justify-content: center;
+  width: 100%;
+  min-height: 80px;
+}
+
+@media (min-width: 480px) {
+  .portraitContainer {
+    min-height: 100px;
+  }
 }
 
 .planetName {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
   color: var(--secondary-dark);
   margin-bottom: var(--space-sm);
 }
 
 .planetDescription {
-  font-size: 0.875rem;
+  font-size: clamp(0.8rem, 2vw, 0.875rem);
   color: var(--text-secondary);
   margin-bottom: var(--space-md);
 }
@@ -110,12 +144,18 @@
 .result {
   background: var(--surface);
   border-radius: var(--radius-xl);
-  padding: var(--space-2xl);
+  padding: var(--space-xl);
   box-shadow: var(--shadow-lg);
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
   animation: fadeIn var(--transition-slow) ease-out;
+}
+
+@media (min-width: 768px) {
+  .result {
+    padding: var(--space-2xl);
+  }
 }
 
 .resultHeader {
