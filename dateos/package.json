@@ -1,0 +1,22 @@
+{
+  "name": "dateos",
+  "version": "1.0.0",
+  "description": "A romantic Sailor Moon themed dating website for Amir and Ayunni",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "8.56.0",
+    "eslint-config-next": "14.1.0"
+  },
+  "packageManager": "yarn@1.22.21+sha512.ca75da26c00327d26267ce33536e5790f18ebd53266796fbb664d2a4a5116308042dd8ee7003b276a20eace7d3c5561c3577bdd71bcb67071187af124779620a"
+}

@@ -1,0 +1,320 @@
+.portrait {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.portraitSmall {
+  width: 60px;
+}
+
+.portraitMedium {
+  width: 100px;
+}
+
+.portraitLarge {
+  width: 150px;
+}
+
+.characterImage {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+}
+
+.characterImage:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+.placeholderCircle {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.placeholderCircle:hover {
+  transform: scale(1.05);
+}
+
+.placeholderEmoji {
+  font-size: 2rem;
+  filter: grayscale(0);
+}
+
+.portraitSmall .placeholderEmoji {
+  font-size: 1.5rem;
+}
+
+.portraitLarge .placeholderEmoji {
+  font-size: 3rem;
+}
+
+.characterInfo {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.characterInfo h4 {
+  margin: 0;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.characterInfo p {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--navy-light);
+  font-style: italic;
+}
+
+/* Hero Image */
+.heroImageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(255, 182, 217, 0.3));
+  animation: float 4s ease-in-out infinite;
+}
+
+.heroPlaceholder {
+  background: linear-gradient(135deg, rgba(255, 224, 236, 0.2) 0%, rgba(255, 182, 217, 0.2) 100%);
+  border: 2px dashed var(--primary);
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.moonCrescent {
+  font-size: 4rem;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.heroText {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-top: 1rem;
+}
+
+/* Luna & Artemis Guide */
+.guideContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.guideImage {
+  width: 80px;
+  height: auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+
+.guidePlaceholder {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 2rem;
+}
+
+.speechBubble {
+  background: white;
+  border: 2px solid var(--primary);
+  border-radius: 20px;
+  padding: 1rem 1.5rem;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.speechBubble::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid var(--primary);
+}
+
+.speechBubble p {
+  margin: 0;
+  font-family: 'Kalam', sans-serif;
+  color: var(--navy-main);
+}
+
+/* Transformation Scene */
+.transformationContainer {
+  position: relative;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.transformationImage {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+}
+
+.transformationPlaceholder {
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
+  border: 2px dashed var(--accent);
+  border-radius: 20px;
+  padding: 3rem;
+}
+
+.sparkles {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2rem;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.sparkles span:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.sparkles span:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.transformationPlaceholder p {
+  margin-top: 1rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Romantic Scene */
+.romanticContainer {
+  position: relative;
+  margin: 2rem auto;
+  max-width: 350px;
+}
+
+.romanticImage {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border: 3px solid var(--primary-light);
+  box-shadow: 0 10px 40px rgba(255, 182, 217, 0.3);
+}
+
+.romanticPlaceholder {
+  background: linear-gradient(135deg, rgba(255, 182, 217, 0.1) 0%, rgba(255, 224, 236, 0.1) 100%);
+  border: 2px dashed var(--primary);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.hearts {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2.5rem;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.romanticPlaceholder p {
+  margin-top: 1rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  color: var(--primary);
+  font-style: italic;
+}
+
+/* Animations */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heroImageContainer {
+    max-width: 300px;
+  }
+  
+  .guideContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .speechBubble::before {
+    left: 50%;
+    top: -10px;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid var(--primary);
+    border-top: none;
+  }
+  
+  .transformationContainer {
+    margin: 1rem 0;
+  }
+}

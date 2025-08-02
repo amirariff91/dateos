@@ -1,0 +1,48 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  padding-top: 64px; /* Height of navigation */
+}
+
+.footer {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: var(--space-2xl) 0;
+  margin-top: var(--space-3xl);
+}
+
+.footerContent {
+  text-align: center;
+}
+
+.footerText {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: var(--space-xs);
+}
+
+.heart {
+  color: var(--primary);
+  font-size: 1rem;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.footerSubtext {
+  color: var(--text-light);
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}

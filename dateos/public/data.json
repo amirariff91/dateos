@@ -1,0 +1,209 @@
+{
+  "nextDate": {
+    "date": "2025-08-16",
+    "time": "10:00",
+    "title": "Badminton & Brunch Moon Date",
+    "location": "TTDI Badminton Court & Kedey Kamek",
+    "locationUrl": "https://maps.google.com/?q=Kedey+Kamek+TTDI",
+    "budget": "RM100",
+    "dressCode": "Sporty Sailor Senshi (Bring your A-game!)"
+  },
+  "wishlist": [
+    {
+      "id": 1,
+      "name": "Badminton Rematch - Best of 3",
+      "type": "active",
+      "votes": 8,
+      "priority": "high"
+    },
+    {
+      "id": 2,
+      "name": "BBQTown or Sukiya Date",
+      "type": "foodie", 
+      "votes": 7,
+      "priority": "high"
+    },
+    {
+      "id": 3,
+      "name": "Sarawakian Food Tour - Dapur Sarawak",
+      "type": "foodie",
+      "votes": 7,
+      "priority": "high"
+    },
+    {
+      "id": 4,
+      "name": "Try Pickleball Together",
+      "type": "active",
+      "votes": 5,
+      "priority": "medium"
+    },
+    {
+      "id": 5,
+      "name": "Explore Sarawak - Pan Borneo Adventure",
+      "type": "romantic",
+      "votes": 6,
+      "priority": "high"
+    },
+    {
+      "id": 6,
+      "name": "Morning Pilates Session",
+      "type": "active",
+      "votes": 3,
+      "priority": "medium"
+    },
+    {
+      "id": 7,
+      "name": "Coffee Date at Your Favorite Cafe",
+      "type": "relaxing",
+      "votes": 4,
+      "priority": "medium"
+    },
+    {
+      "id": 8,
+      "name": "Tech Talk & Project Planning",
+      "type": "cultural",
+      "votes": 2,
+      "priority": "low"
+    },
+    {
+      "id": 9,
+      "name": "Mission Impossible Action Night",
+      "type": "romantic",
+      "votes": 4,
+      "priority": "medium"
+    },
+    {
+      "id": 10,
+      "name": "F1 Movie at IOI Damansara",
+      "type": "romantic",
+      "votes": 3,
+      "priority": "medium"
+    }
+  ],
+  "memories": [
+    {
+      "id": 1,
+      "date": "2025-06-10",
+      "title": "First Swipe Right on Bumble",
+      "amirCaption": "The 12-hour KB-KL road trip that led me to install Bumble. Best decision of that boring drive!",
+      "ayunniCaption": "Who knew swiping right would lead to someone who texts longer than my work reports? 😝"
+    },
+    {
+      "id": 2,
+      "date": "2025-06-12",
+      "title": "WhatsApp Liberation Day",
+      "amirCaption": "'Feels much lighter here compared to bumble😂' - Finally escaped to WhatsApp! Long messages incoming... 🤣",
+      "ayunniCaption": "The day I discovered you're actually a storyteller disguised as a tech guy! Green flag confirmed ✅"
+    },
+    {
+      "id": 3,
+      "date": "2025-06-12",
+      "title": "The Great Spam Apology",
+      "amirCaption": "The day you apologized for 'spamming' WhatsApp and then sent the sweetest message about taking things slow.",
+      "ayunniCaption": "'Hey, sorry spam whatsapp 😅' But also... I'd love to meet u too. You have good vibes!"
+    },
+    {
+      "id": 4,
+      "date": "2025-06-13",
+      "title": "The Long Text Revelation",
+      "amirCaption": "'Again another sets of long texts 🤣🤣🤣' Sorry, I can't help myself when talking to you!",
+      "ayunniCaption": "It's a green flag for me! But let's see how long you boleh consistent mcm ni 🫣😝 Spoiler: Still consistent!"
+    },
+    {
+      "id": 5,
+      "date": "2025-06-14",
+      "title": "Late Night Sarawak Stories",
+      "amirCaption": "Sharing my childhood memories in Miri until 1 AM. From badminton with Awie to patung stories!",
+      "ayunniCaption": "The night I learned about patung, plantation life, and that you're actually not garang at all! 'U tak garang?'"
+    },
+    {
+      "id": 6,
+      "date": "2025-06-15",
+      "title": "Kedey Kamek Planning at 2:47 AM",
+      "amirCaption": "'Maybe kedey kamek?' The breakfast date we planned at 2:47 AM. Sarawakian approved restaurant for my Sarawakian approved girl.",
+      "ayunniCaption": "See you there! (But first, let me take things slow... I hope you don't mind 🫣)"
+    },
+    {
+      "id": 7,
+      "date": "2025-06-19",
+      "time": "7:19:50 AM",
+      "title": "The Morning Confession 💕",
+      "amirCaption": "The morning you bravely shared your feelings at 7:19 AM. My heart melted when I read 'Amir, i takut laa i suka u'.",
+      "ayunniCaption": "'Pagi2 dah confess 😭' But you said 'i like everything about you'... one step at a time together 🙌"
+    },
+    {
+      "id": 8,
+      "date": "2025-06-26",
+      "title": "Medical Checkup & Lunch Plans",
+      "amirCaption": "Planning our Kedey Kamek lunch while you had your annual checkup at Beacon. I was already not nervous anymore!",
+      "ayunniCaption": "U dah tak nervous ke? InshaAllah... but first, let me survive this medical checkup 😭"
+    },
+    {
+      "id": 9,
+      "date": "2025-07-06",
+      "title": "Movie Date Planning with ChatGPT",
+      "amirCaption": "Planning Superman movie at midnight! You asked if I could drive you home 😊",
+      "ayunniCaption": "'ChatGPT said watch movie if nervous - less interaction!' But no romance movies, nanti awkward 😅"
+    },
+    {
+      "id": 10,
+      "date": "2025-07-07",
+      "title": "Superman & Bracelet Night",
+      "amirCaption": "'You're so pretty tonight😘' Our first movie date! 'I'm in love tonight☺️'",
+      "ayunniCaption": "'Thanks for getting the bracelet too 🤍' Next time, let me treat you okay!"
+    },
+    {
+      "id": 11,
+      "date": "2025-07-15",
+      "title": "Phone Wallpaper Reveal",
+      "amirCaption": "Showed my phone wallpaper of you eating mee kolok to my colleagues. 'I senang je tunjuk phone wallpaper😂'",
+      "ayunniCaption": "You actually made me your wallpaper! And shared fitness app data stories about the past..."
+    },
+    {
+      "id": 12,
+      "date": "2025-07-31",
+      "title": "First Flowers Surprise",
+      "amirCaption": "'When i look at the flowers i nmpk you' Surprised you after work with flowers!",
+      "ayunniCaption": "'I didn't expect it at all' Thank you for the flowers 🤍 You pandai betul eh!"
+    },
+    {
+      "id": 13,
+      "date": "2025-08-02",
+      "title": "Going Instagram Official",
+      "amirCaption": "'Hey you're in my thoughts like every 15 min' The night you told your friend about us!",
+      "ayunniCaption": "'Bangga eh i tunjuk gmbr you' Finally told Ad about you! You are so amazing today!"
+    }
+  ],
+  "pickerOptions": {
+    "moon": [
+      "Romantic Dinner at Sarawakian Restaurant",
+      "Sunset Walk at KLCC Park",
+      "Late Night Deep Conversations",
+      "Star Gazing from Rooftop"
+    ],
+    "mercury": [
+      "Tech Exhibition Visit",
+      "Bookstore & Coffee Date",
+      "Explore KL Hidden Gems",
+      "Museum & Cultural Tour"
+    ],
+    "mars": [
+      "Badminton Championship Match",
+      "Hiking at Bukit Kiara",
+      "Try New Sports Together",
+      "Morning Jog & Healthy Breakfast"
+    ],
+    "jupiter": [
+      "Sarawakian Food Festival",
+      "Cooking Laksa Together",
+      "TTDI Food Hunt",
+      "Dessert Cafe Hopping"
+    ],
+    "venus": [
+      "Spa & Relaxation Day",
+      "Movie Marathon at Home",
+      "Cozy Cafe Work Session",
+      "Pilates Class Together"
+    ]
+  }
+}

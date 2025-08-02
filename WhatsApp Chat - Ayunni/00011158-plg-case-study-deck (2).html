@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product-Led Growth Case Studies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0e27;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            animation: pulse 20s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(180deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #e2e8f0;
+        }
+
+        h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 50px;
+        }
+
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .case-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(102, 126, 234, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .case-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .company-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-right: 20px;
+        }
+
+        .company-info h4 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .company-info p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .metric-card {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .strategy-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .strategy-list li {
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 10px;
+            border-left: 3px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .strategy-list li:hover {
+            transform: translateX(5px);
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .strategy-list li strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-marker {
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            margin-right: 30px;
+            flex-shrink: 0;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .timeline-content {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            flex-grow: 1;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .principle-card {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .principle-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-btn:hover {
+            background: #667eea;
+            transform: scale(1.1);
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            margin: 30px 0;
+        }
+
+        .quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #e2e8f0;
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .slide { padding: 40px 20px; }
+            .metric-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide" id="slide1">
+        <div class="container">
+            <h1>Product-Led Growth</h1>
+            <p class="subtitle">Mastering the Art of Self-Selling Products</p>
+            <div class="highlight">
+                <h3>Case Studies from Industry Leaders</h3>
+                <p style="font-size: 1.2rem; margin-top: 20px;">Learn how Slack, Zoom, Notion, and others built billion-dollar businesses by letting their products do the talking</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Overview -->
+    <div class="slide" id="slide2">
+        <div class="container">
+            <h2>What is Product-Led Growth?</h2>
+            <div class="quote">
+                "A go-to-market strategy that relies on using your product as the main vehicle to acquire, activate, and retain customers"
+            </div>
+            <div class="case-study-grid">
+                <div class="case-card">
+                    <h3>🚀 The PLG Advantage</h3>
+                    <ul class="strategy-list">
+                        <li>Lower customer acquisition costs</li>
+                        <li>Faster time to value</li>
+                        <li>Higher conversion rates</li>
+                        <li>Organic viral growth</li>
+                    </ul>
+                </div>
+                <div class="case-card">
+                    <h3>📊 Companies Using PLG</h3>
+                    <div class="metric-grid">
+                        <div class="metric-card">
+                            <div class="metric-value">8</div>
+                            <div class="metric-label">Major Case Studies</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">$100B+</div>
+                            <div class="metric-label">Combined Valuation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: PLG vs Traditional -->
+    <div class="slide" id="slide3">
+        <div class="container">
+            <h2>Product-Led Growth vs Traditional Marketing</h2>
+            <div class="case-study-grid">
+                <div class="case-card" style="background: rgba(30, 41, 59, 0.7);">
+                    <h3 style="color: #667eea;">🚀 Product-Led Growth</h3>
+                    <ul class="strategy-list">
+                        <li>
+                            <strong>Try Before You Buy</strong>
+                            Free trials/freemium let users experience value first
+                        </li>
+                        <li>
+                            <strong>Bottom-Up Adoption</strong>
+                            Individual users bring products to their companies
+                        </li>
+                        <li>
+                            <strong>Product Does the Selling</strong>
+                            Self-serve onboarding, minimal sales touch needed
+                        </li>
+                        <li>
+                            <strong>Viral Growth Loops</strong>
+                            Users naturally invite others through collaboration
+                        </li>
+                        <li>
+                            <strong>Lower CAC</strong>
+                            Organic growth reduces marketing spend significantly
+                        </li>
+                        <li>
+                            <strong>Data-Driven Iteration</strong>
+                            Product usage data drives all decisions
+                        </li>
+                    </ul>
+                </div>
+                <div class="case-card" style="background: rgba(59, 30, 41, 0.7);">
+                    <h3 style="color: #e11d48;">📣 Traditional Marketing</h3>
+                    <ul class="strategy-list">
+                        <li>
+                            <strong>Lead with Sales</strong>
+                            Demos and sales calls before product access
+                        </li>
+                        <li>
+                            <strong>Top-Down Sales</strong>
+                            Target executives and decision makers
+                        </li>
+                        <li>
+                            <strong>Human-Led Process</strong>
+                            Sales reps guide entire customer journey
+                        </li>
+                        <li>
+                            <strong>Paid Acquisition</strong>
+                            Heavy reliance on ads, events, and outbound
+                        </li>
+                        <li>
+                            <strong>Higher CAC</strong>
+                            Expensive sales teams and marketing campaigns
+                        </li>
+                        <li>
+                            <strong>Sales-Driven Insights</strong>
+                            Feedback comes through sales conversations
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight" style="margin-top: 30px;">
+                <h3>💡 The Key Difference</h3>
+                <p style="font-size: 1.2rem; margin-top: 15px;">Traditional: "Let me tell you why our product is great" → Demo → Negotiate → Purchase</p>
+                <p style="font-size: 1.2rem; margin-top: 10px;">PLG: "Try it yourself and see the value" → Experience → Share → Upgrade</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Slack -->
+    <div class="slide" id="slide4">
+        <div class="container">
+            <h2>Product-Led Growth vs Traditional Marketing</h2>
+            <div class="case-study-grid">
+                <div class="case-card" style="background: rgba(30, 41, 59, 0.7);">
+                    <h3 style="color: #667eea;">🚀 Product-Led Growth</h3>
+                    <ul class="strategy-list">
+                        <li>
+                            <strong>Try Before You Buy</strong>
+                            Free trials/freemium let users experience value first
+                        </li>
+                        <li>
+                            <strong>Bottom-Up Adoption</strong>
+                            Individual users bring products to their companies
+                        </li>
+                        <li>
+                            <strong>Product Does the Selling</strong>
+                            Self-serve onboarding, minimal sales touch needed
+                        </li>
+                        <li>
+                            <strong>Viral Growth Loops</strong>
+                            Users naturally invite others through collaboration
+                        </li>
+                        <li>
+                            <strong>Lower CAC</strong>
+                            Organic growth reduces marketing spend significantly
+                        </li>
+                        <li>
+                            <strong>Data-Driven Iteration</strong>
+                            Product usage data drives all decisions
+                        </li>
+                    </ul>
+                </div>
+                <div class="case-card" style="background: rgba(59, 30, 41, 0.7);">
+                    <h3 style="color: #e11d48;">📣 Traditional Marketing</h3>
+                    <ul class="strategy-list">
+                        <li>
+                            <strong>Lead with Sales</strong>
+                            Demos and sales calls before product access
+                        </li>
+                        <li>
+                            <strong>Top-Down Sales</strong>
+                            Target executives and decision makers
+                        </li>
+                        <li>
+                            <strong>Human-Led Process</strong>
+                            Sales reps guide entire customer journey
+                        </li>
+                        <li>
+                            <strong>Paid Acquisition</strong>
+                            Heavy reliance on ads, events, and outbound
+                        </li>
+                        <li>
+                            <strong>Higher CAC</strong>
+                            Expensive sales teams and marketing campaigns
+                        </li>
+                        <li>
+                            <strong>Sales-Driven Insights</strong>
+                            Feedback comes through sales conversations
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight" style="margin-top: 30px;">
+                <h3>💡 The Key Difference</h3>
+                <p style="font-size: 1.2rem; margin-top: 15px;">Traditional: "Let me tell you why our product is great" → Demo → Negotiate → Purchase</p>
+                <p style="font-size: 1.2rem; margin-top: 10px;">PLG: "Try it yourself and see the value" → Experience → Share → Upgrade</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Slack -->
+    <div class="slide" id="slide3">
+        <div class="container">
+            <h2>Slack: The Communication Revolution</h2>
+            <div class="case-study-grid">
+                <div class="case-card">
+                    <div class="company-header">
+                        <div class="company-logo">S</div>
+                        <div class="company-info">
+                            <h4>Slack</h4>
+                            <p>$0 to $7B in under 5 years</p>
+                        </div>
+                    </div>
+                    <div class="metric-grid">
+                        <div class="metric-card">
+                            <div class="metric-value">8M</div>
+                            <div class="metric-label">Daily Active Users</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">43%</div>
+                            <div class="metric-label">Fortune 100 Companies</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">30%</div>
+                            <div class="metric-label">Conversion Rate</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">$7.1B</div>
+                            <div class="metric-label">Valuation</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <h3>Key PLG Strategies</h3>
+                    <ul class="strategy-list">
+                        <li>
+                            <strong>Freemium Model</strong>
+                            Core features free forever, premium for advanced needs
+                        </li>
+                        <li>
+                            <strong>Bottom-up Adoption</strong>
+                            Individual employees bring it to their teams organically
+                        </li>
+                        <li>
+                            <strong>Viral Growth Loops</strong>
+                            Every invitation spreads product awareness
+                        </li>
+                        <li>
+                            <strong>Data-Driven Optimization</strong>
+                            Meticulous tracking and A/B testing everything
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Zoom -->
+    <div class="slide" id="slide5">
+        <div class="container">
+            <h2>Zoom: Video Conferencing Perfected</h2>
+            <div class="case-study-grid">
+                <div class="case-card">
+                    <div class="company-header">
+                        <div class="company-logo">Z</div>
+                        <div class="company-info">
+                            <h4>Zoom</h4>
+                            <p>The pandemic success story</p>
+                        </div>
+                    </div>
+                    <div class="metric-grid">
+                        <div class="metric-card">
+                            <div class="metric-value">300M</div>
+                            <div class="metric-label">Daily Participants</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">3000%</div>
+                            <div class="metric-label">Pandemic Growth</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">$2.65B</div>
+                            <div class="metric-label">Annual Revenue</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">89%</div>
+                            <div class="metric-label">Natural Rate of Growth</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <h3>Key PLG Strategies</h3>
+                    <ul class="strategy-list">
+                        <li>
+                            <strong>40-Minute Free Meetings</strong>
+                            Perfect trial length for experiencing value
+                        </li>
+                        <li>
+                            <strong>No Marketing for 2 Years</strong>
+                            Focused entirely on product excellence first
+                        </li>
+                        <li>
+                            <strong>Frictionless Experience</strong>
+                            One-click joining, no downloads required
+                        </li>
+                        <li>
+                            <strong>Pandemic Pivot</strong>
+                            Removed limits when the world needed it most
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Notion -->
+    <div class="slide" id="slide6">
+        <div class="container">
+            <h2>Notion: The All-in-One Workspace</h2>
+            <div class="case-study-grid">
+                <div class="case-card">
+                    <div class="company-header">
+                        <div class="company-logo">N</div>
+                        <div class="company-info">
+                            <h4>Notion</h4>
+                            <p>From struggling startup to $10B valuation</p>
+                        </div>
+                    </div>
+                    <div class="metric-grid">
+                        <div class="metric-card">
+                            <div class="metric-value">30M</div>
+                            <div class="metric-label">Total Users</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">4M</div>
+                            <div class="metric-label">Paying Users</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">$567M</div>
+                            <div class="metric-label">ARR (2023)</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">1M+</div>
+                            <div class="metric-label">Community Members</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <h3>Key PLG Strategies</h3>
+                    <ul class="strategy-list">
+                        <li>
+                            <strong>Community-Led Growth</strong>
+                            Over 280,000 members on Reddit alone
+                        </li>
+                        <li>
+                            <strong>Template Ecosystem</strong>
+                            User-generated content drives adoption
+                        </li>
+                        <li>
+                            <strong>Team Collaboration Focus</strong>
+                            2018 pivot to collaborative features
+                        </li>
+                        <li>
+                            <strong>SEO & Content Marketing</strong>
+                            Tutorials and case studies drive organic traffic
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Other Success Stories -->
+    <div class="slide" id="slide7">
+        <div class="container">
+            <h2>More PLG Success Stories</h2>
+            <div class="case-study-grid">
+                <div class="case-card">
+                    <div class="company-header">
+                        <div class="company-logo">D</div>
+                        <div class="company-info">
+                            <h4>Dropbox</h4>
+                            <p>The file-sharing pioneer</p>
+                        </div>
+                    </div>
+                    <ul class="strategy-list">
+                        <li><strong>700M users</strong> • $2.5B revenue</li>
+                        <li><strong>Referral Program:</strong> Extra storage for invites</li>
+                        <li><strong>Viral Sharing:</strong> No account needed to receive files</li>
+                    </ul>
+                </div>
+                <div class="case-card">
+                    <div class="company-header">
+                        <div class="company-logo">A</div>
+                        <div class="company-info">
+                            <h4>Airtable</h4>
+                            <p>Spreadsheet meets database</p>
+                        </div>
+                    </div>
+                    <ul class="strategy-list">
+                        <li><strong>80% Fortune 500</strong> • $11B valuation</li>
+                        <li><strong>Reverse Trial:</strong> Start with Pro features</li>
+                        <li><strong>Community:</strong> 53,000+ active members</li>
+                    </ul>
+                </div>
+                <div class="case-card">
+                    <div class="company-header">
+                        <div class="company-logo">F</div>
+                        <div class="company-info">
+                            <h4>Figma</h4>
+                            <p>Browser-based design revolution</p>
+                        </div>
+                    </div>
+                    <ul class="strategy-list">
+                        <li><strong>$20B valuation</strong> • $400M revenue</li>
+                        <li><strong>Browser-First:</strong> No downloads needed</li>
+                        <li><strong>Real-Time Collab:</strong> Design together live</li>
+                    </ul>
+                </div>
+                <div class="case-card">
+                    <div class="company-header">
+                        <div class="company-logo">C</div>
+                        <div class="company-info">
+                            <h4>Calendly</h4>
+                            <p>Scheduling made simple</p>
+                        </div>
+                    </div>
+                    <ul class="strategy-list">
+                        <li><strong>20M users</strong> • Profitable in 3 years</li>
+                        <li><strong>Viral by Design:</strong> Every meeting = new user</li>
+                        <li><strong>Network Effects:</strong> Value grows with usage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Key PLG Principles -->
+    <div class="slide" id="slide8">
+        <div class="container">
+            <h2>Key PLG Principles</h2>
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-icon">🎯</div>
+                    <h3>Low Barrier to Entry</h3>
+                    <p>Free trials or freemium models let users experience value immediately</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon">⚡</div>
+                    <h3>Product Excellence</h3>
+                    <p>The product must deliver immediate, tangible value to users</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon">🔄</div>
+                    <h3>Viral Growth Loops</h3>
+                    <p>Built-in features that naturally encourage sharing and collaboration</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon">👥</div>
+                    <h3>Community Building</h3>
+                    <p>Invest in user communities for organic growth and advocacy</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon">📊</div>
+                    <h3>Data-Driven Iteration</h3>
+                    <p>Constant measurement and improvement based on user behavior</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon">🏢</div>
+                    <h3>Bottom-Up Adoption</h3>
+                    <p>Target individual users who bring products to their organizations</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Duolingo -->
+    <div class="slide" id="slide9">
+        <div class="container">
+            <h2>Duolingo: Gamified Learning Revolution</h2>
+            <div class="case-study-grid">
+                <div class="case-card">
+                    <div class="company-header">
+                        <div class="company-logo">D</div>
+                        <div class="company-info">
+                            <h4>Duolingo</h4>
+                            <p>The world's #1 language learning app</p>
+                        </div>
+                    </div>
+                    <div class="metric-grid">
+                        <div class="metric-card">
+                            <div class="metric-value">575M</div>
+                            <div class="metric-label">Total Users</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">80%</div>
+                            <div class="metric-label">Organic Acquisition</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">4.5x</div>
+                            <div class="metric-label">DAU Growth (4 years)</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">7%</div>
+                            <div class="metric-label">Free to Paid Conversion</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <h3>Gamification-Driven PLG</h3>
+                    <ul class="strategy-list">
+                        <li>
+                            <strong>Streaks & Daily Goals</strong>
+                            Users maintain streaks, driving 21% retention improvement
+                        </li>
+                        <li>
+                            <strong>XP & Virtual Currency</strong>
+                            Points and gems create instant gratification loops
+                        </li>
+                        <li>
+                            <strong>Leaderboards & Leagues</strong>
+                            Social competition increased DAU by 1.6%
+                        </li>
+                        <li>
+                            <strong>Achievement Badges</strong>
+                            116% jump in referrals after badge implementation
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight" style="margin-top: 30px;">
+                <h3>🎮 The Gamification Success Formula</h3>
+                <p style="font-size: 1.1rem; margin-top: 15px;">Duolingo transformed language learning from a daunting task into an addictive game. By implementing streaks, users who maintain 7+ day streaks now represent over 50% of DAU. The friendly green owl mascot Duo increased push notification effectiveness by 5%, making reminders feel personal rather than pushy.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: Call to Action -->
+    <div class="slide" id="slide10">
+        <div class="container">
+            <h2>Start Your PLG Journey</h2>
+            <div class="highlight">
+                <h3>Key Takeaways</h3>
+                <div class="case-study-grid">
+                    <div class="case-card">
+                        <h4>🎯 Focus on Product</h4>
+                        <p>Your product is your best salesperson. Make it exceptional.</p>
+                    </div>
+                    <div class="case-card">
+                        <h4>🚀 Remove Friction</h4>
+                        <p>Every barrier to entry is a lost opportunity for growth.</p>
+                    </div>
+                    <div class="case-card">
+                        <h4>📈 Measure Everything</h4>
+                        <p>Data-driven decisions are the foundation of PLG success.</p>
+                    </div>
+                    <div class="case-card">
+                        <h4>👥 Build Community</h4>
+                        <p>Your users are your best growth channel. Empower them.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="quote" style="margin-top: 40px;">
+                "The best products don't need to be sold—they sell themselves through the value they deliver."
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <button class="nav-btn" onclick="previousSlide()">←</button>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 10;
+
+        function showSlide(n) {
+            if (n > totalSlides) currentSlide = 1;
+            if (n < 1) currentSlide = totalSlides;
+            
+            for (let i = 1; i <= totalSlides; i++) {
+                document.getElementById(`slide${i}`).style.display = 'none';
+            }
+            
+            document.getElementById(`slide${currentSlide}`).style.display = 'flex';
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+        });
+
+        // Initialize
+        showSlide(1);
+
+        // Add smooth scroll behavior
+        document.querySelectorAll('.slide').forEach(slide => {
+            slide.addEventListener('wheel', (e) => {
+                if (e.deltaY > 50) {
+                    nextSlide();
+                } else if (e.deltaY < -50) {
+                    previousSlide();
+                }
+            }, { passive: true });
+        });
+    </script>
+</body>
+</html>
