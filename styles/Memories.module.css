@@ -58,8 +58,14 @@
 .timelineItem {
   position: relative;
   margin-bottom: 5rem;
-  animation: fadeIn 0.8s ease backwards;
-  animation-delay: var(--delay);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timelineItem.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes fadeIn {

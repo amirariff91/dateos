@@ -34,11 +34,11 @@ export default function Plans({ nextDate }) {
   }, [nextDate])
 
   return (
-    <section id="plans" className={styles.plans}>
+    <section id="plans" className={styles.plans} aria-labelledby="plans-heading">
       <div className="container">
         <div className={styles.header}>
           <TransformationBrooch size={60} primaryColor="#FFB6D9" />
-          <h2 className="prism-text">Our Next Chapter</h2>
+          <h2 id="plans-heading" className="prism-text">Our Next Chapter</h2>
         </div>
         <div className="star-divider"></div>
         
@@ -56,22 +56,22 @@ export default function Plans({ nextDate }) {
           
           <h3 className={styles.dateTitle}>{nextDate.title}</h3>
           
-          <div className={styles.countdown}>
+          <div className={styles.countdown} role="timer" aria-label={`Countdown to ${nextDate.title}`}>
             <div className={styles.countdownItem}>
               <span className={styles.countdownNumber}>{timeLeft.days}</span>
-              <span className={styles.countdownLabel}>Days</span>
+              <span className={styles.countdownLabel} aria-label="Days">Days</span>
             </div>
             <div className={styles.countdownItem}>
               <span className={styles.countdownNumber}>{timeLeft.hours}</span>
-              <span className={styles.countdownLabel}>Hours</span>
+              <span className={styles.countdownLabel} aria-label="Hours">Hours</span>
             </div>
             <div className={styles.countdownItem}>
               <span className={styles.countdownNumber}>{timeLeft.minutes}</span>
-              <span className={styles.countdownLabel}>Minutes</span>
+              <span className={styles.countdownLabel} aria-label="Minutes">Minutes</span>
             </div>
             <div className={styles.countdownItem}>
               <span className={styles.countdownNumber}>{timeLeft.seconds}</span>
-              <span className={styles.countdownLabel}>Seconds</span>
+              <span className={styles.countdownLabel} aria-label="Seconds">Seconds</span>
             </div>
           </div>
           
@@ -95,7 +95,7 @@ export default function Plans({ nextDate }) {
             </div>
             <div className={styles.detailItem}>
               <strong>Location:</strong> 
-              <a href={nextDate.locationUrl} target="_blank" rel="noopener noreferrer" className={styles.locationLink}>
+              <a href={nextDate.locationUrl} target="_blank" rel="noopener noreferrer" className={styles.locationLink} aria-label={`View location: ${nextDate.location}`}>
                 {nextDate.location} 📍
               </a>
             </div>

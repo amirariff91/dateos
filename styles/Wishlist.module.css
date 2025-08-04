@@ -93,8 +93,11 @@
 }
 
 .wishlistCard:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 0 30px rgba(255, 182, 217, 0.15);
+  transform: translateY(-6px) scale(1.02);
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(255, 182, 217, 0.05) 100%);
 }
 
 .wishlistCard.topPick {

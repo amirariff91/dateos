@@ -35,7 +35,7 @@ export default function Hero({ nextDate }) {
   }, [nextDate])
 
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} aria-labelledby="hero-heading">
       <div className={styles.backgroundPattern}></div>
       <MoonSilhouette className={styles.moonDecor} />
       
@@ -57,7 +57,7 @@ export default function Hero({ nextDate }) {
                 </defs>
               </svg>
             </div>
-            <h1 className={styles.title}>Our Next Magical Date</h1>
+            <h1 id="hero-heading" className={styles.title}>Our Next Magical Date</h1>
             <p className={styles.subtitle}>Every moment together is a new adventure</p>
           </div>
 
@@ -75,14 +75,14 @@ export default function Hero({ nextDate }) {
                   })}</span>
                 </div>
                 <div className={styles.detailItem}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" role="img" aria-label="Time">
                     <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
                     <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
                   <span>{nextDate.time}</span>
                 </div>
                 <div className={styles.detailItem}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" role="img" aria-label="Location">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" 
                           fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="2"/>
                     <circle cx="12" cy="9" r="2.5" fill="currentColor"/>
@@ -92,24 +92,24 @@ export default function Hero({ nextDate }) {
               </div>
             </div>
 
-            <div className={styles.countdown}>
+            <div className={styles.countdown} role="timer" aria-label={`Countdown to ${nextDate.title}`}>
               <h3 className={styles.countdownTitle}>Counting down the moments</h3>
               <div className={styles.timeGrid}>
                 <div className={styles.timeUnit}>
                   <span className={styles.timeValue}>{timeLeft.days}</span>
-                  <span className={styles.timeLabel}>Days</span>
+                  <span className={styles.timeLabel} aria-label="Days">Days</span>
                 </div>
                 <div className={styles.timeUnit}>
                   <span className={styles.timeValue}>{timeLeft.hours.toString().padStart(2, '0')}</span>
-                  <span className={styles.timeLabel}>Hours</span>
+                  <span className={styles.timeLabel} aria-label="Hours">Hours</span>
                 </div>
                 <div className={styles.timeUnit}>
                   <span className={styles.timeValue}>{timeLeft.minutes.toString().padStart(2, '0')}</span>
-                  <span className={styles.timeLabel}>Minutes</span>
+                  <span className={styles.timeLabel} aria-label="Minutes">Minutes</span>
                 </div>
                 <div className={styles.timeUnit}>
                   <span className={styles.timeValue}>{timeLeft.seconds.toString().padStart(2, '0')}</span>
-                  <span className={styles.timeLabel}>Seconds</span>
+                  <span className={styles.timeLabel} aria-label="Seconds">Seconds</span>
                 </div>
               </div>
             </div>

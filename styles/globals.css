@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+/* Fonts loaded in _document.js for better performance */
 
 :root {
   /* Primary Colors - Limited Palette */
@@ -45,9 +45,10 @@
   --radius-full: 9999px;
   
   /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 250ms ease;
-  --transition-slow: 350ms ease;
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 600ms cubic-bezier(0.23, 1, 0.32, 1);
   
   /* Z-index */
   --z-base: 1;
@@ -157,6 +158,28 @@ a:hover {
   text-decoration: none;
   min-height: 44px;
   touch-action: manipulation;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width var(--transition-smooth), height var(--transition-smooth);
+  z-index: -1;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .btn-primary {
@@ -166,8 +189,8 @@ a:hover {
 
 .btn-primary:hover {
   background-color: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(255, 145, 199, 0.4), 0 0 40px rgba(255, 145, 199, 0.2);
 }
 
 .btn-secondary {
@@ -179,6 +202,9 @@ a:hover {
 .btn-secondary:hover {
   border-color: var(--primary);
   color: var(--primary-dark);
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 4px 20px rgba(255, 182, 217, 0.3);
+  background-color: var(--primary-light);
 }
 
 /* Cards */
@@ -191,8 +217,8 @@ a:hover {
 }
 
 .card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 0 60px rgba(255, 182, 217, 0.1);
+  transform: translateY(-6px) scale(1.01);
 }
 
 /* Subtle Sailor Moon Elements */
@@ -233,9 +259,43 @@ a:hover {
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
+    opacity: 1;
   }
   50% {
     transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float-up {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(-3deg);
+  }
+  66% {
+    transform: translateY(-5px) rotate(3deg);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
   }
 }
 

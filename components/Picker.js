@@ -67,7 +67,7 @@ export default function Picker({ pickerOptions }) {
   }
 
   return (
-    <section id="picker" className={styles.picker}>
+    <section id="picker" className={styles.picker} aria-labelledby="picker-heading">
       <div className="container">
         <div className={styles.header}>
           <div className={styles.icon}>
@@ -78,17 +78,19 @@ export default function Picker({ pickerOptions }) {
               <circle cx="17" cy="14" r="2" fill="currentColor"/>
             </svg>
           </div>
-          <h2 className={styles.title}>Planetary Date Picker</h2>
+          <h2 id="picker-heading" className={styles.title}>Planetary Date Picker</h2>
           <p className={styles.subtitle}>Choose a planet to guide your next adventure</p>
         </div>
         
-        <div className={styles.planetsGrid}>
+        <div className={styles.planetsGrid} role="group" aria-label="Select a planet for date suggestions">
           {planets.map((planet) => (
             <button
               key={planet.id}
               className={`${styles.planetCard} ${selectedPlanet?.id === planet.id ? styles.selected : ''}`}
               onClick={() => selectPlanet(planet)}
               style={{ '--planet-color': planet.color }}
+              aria-label={`Select ${planet.name} - ${planet.description}`}
+              aria-pressed={selectedPlanet?.id === planet.id}
             >
               <div className={styles.portraitContainer}>
                 <SailorPortrait 
@@ -105,7 +107,7 @@ export default function Picker({ pickerOptions }) {
         </div>
         
         {selectedOption && (
-          <div className={styles.result}>
+          <div className={styles.result} role="region" aria-live="polite" aria-label="Date suggestion">
             <div className={styles.resultHeader}>
               <span className={styles.resultEmoji}>{selectedPlanet.emoji}</span>
               <h3>{selectedPlanet.guardian} suggests:</h3>
@@ -118,13 +120,13 @@ export default function Picker({ pickerOptions }) {
         )}
         
         {isRevealing && (
-          <div className={styles.loading}>
+          <div className={styles.loading} role="status" aria-live="polite">
             <div className={styles.loadingDots}>
               <span></span>
               <span></span>
               <span></span>
             </div>
-            <p>The planets are aligning...</p>
+            <p aria-label="Loading suggestion">The planets are aligning...</p>
           </div>
         )}
       </div>

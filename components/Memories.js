@@ -3,24 +3,25 @@ import { HeartIcon, MoonIcon, StarIcon, CosmicHeartCompact, TransformationBrooch
 
 export default function Memories({ memoriesData }) {
   return (
-    <section id="memories" className={styles.memories}>
+    <section id="memories" className={styles.memories} aria-labelledby="memories-heading">
       <div className="container">
         <div className={styles.header}>
           <CosmicHeartCompact size={60} />
-          <h2 className="prism-text">Our Timeline of Love</h2>
+          <h2 id="memories-heading" className="prism-text">Our Timeline of Love</h2>
         </div>
         <div className="star-divider"></div>
         
         <p className={styles.subtitle}>Every moment is a precious gem in our story</p>
         
-        <div className={styles.timeline}>
+        <div className={styles.timeline} role="list" aria-label="Relationship timeline">
           <div className={styles.timelineLine}></div>
           
           {memoriesData.map((memory, index) => (
             <div 
               key={memory.id} 
-              className={`${styles.timelineItem} ${index % 2 === 0 ? styles.left : styles.right}`}
+              className={`${styles.timelineItem} ${index % 2 === 0 ? styles.left : styles.right} scroll-reveal`}
               style={{ '--delay': `${index * 0.2}s` }}
+              role="listitem"
             >
               <div className={styles.timelineMarker}>
                 <TransformationBrooch size={36} primaryColor="white" accentColor="#FFD700" />
@@ -41,8 +42,9 @@ export default function Memories({ memoriesData }) {
                   <div className={styles.photoContainer}>
                     <img 
                       src={memory.photo} 
-                      alt={memory.title}
+                      alt={`Photo from ${memory.title}`}
                       className={styles.photo}
+                      loading="lazy"
                       onError={(e) => {
                         e.target.style.display = 'none';
                         e.target.nextSibling.style.display = 'flex';
@@ -57,19 +59,19 @@ export default function Memories({ memoriesData }) {
                 
                 <div className={styles.captions}>
                   <div className={styles.caption}>
-                    <h4 className={styles.captionTitle}>
+                    <h4 className={styles.captionTitle} id={`amir-caption-${memory.id}`}>
                       <MoonIcon size={20} color="var(--navy-main)" />
                       Amir's Take
                     </h4>
-                    <p className={styles.captionText}>{memory.amirCaption}</p>
+                    <p className={styles.captionText} aria-labelledby={`amir-caption-${memory.id}`}>{memory.amirCaption}</p>
                   </div>
                   
                   <div className={styles.caption}>
-                    <h4 className={styles.captionTitle}>
+                    <h4 className={styles.captionTitle} id={`ayunni-caption-${memory.id}`}>
                       <MoonIcon size={20} color="var(--moon-pink)" />
                       Ayunni's Take
                     </h4>
-                    <p className={styles.captionText}>{memory.ayunniCaption}</p>
+                    <p className={styles.captionText} aria-labelledby={`ayunni-caption-${memory.id}`}>{memory.ayunniCaption}</p>
                   </div>
                 </div>
               </div>

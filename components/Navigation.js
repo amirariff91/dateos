@@ -22,7 +22,7 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
+    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`} role="navigation" aria-label="Main navigation">
       <div className="container">
         <div className={styles.navContent}>
           <Link href="/" className={styles.logo}>

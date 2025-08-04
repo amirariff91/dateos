@@ -1,0 +1,70 @@
+{
+  "name": "DateOS - Amir & Ayunni's Love Story",
+  "short_name": "DateOS",
+  "description": "A magical dating website celebrating Amir & Ayunni's love story with Sailor Moon theme",
+  "theme_color": "#FFB6D9",
+  "background_color": "#FAFAFA",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/?source=pwa",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null,
+  "categories": ["lifestyle", "entertainment"],
+  "shortcuts": [
+    {
+      "name": "Next Date",
+      "short_name": "Date",
+      "description": "View our next planned date",
+      "url": "/#plans",
+      "icons": [{ "src": "/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Memories",
+      "short_name": "Memories",
+      "description": "Browse our timeline of love",
+      "url": "/#memories",
+      "icons": [{ "src": "/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Wishlist",
+      "short_name": "Wishlist",
+      "description": "View and vote on date ideas",
+      "url": "/#wishlist",
+      "icons": [{ "src": "/icon-96x96.png", "sizes": "96x96" }]
+    }
+  ]
+}

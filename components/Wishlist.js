@@ -78,7 +78,7 @@ export default function Wishlist({ wishlistData }) {
   }
 
   return (
-    <section id="wishlist" className={styles.wishlist}>
+    <section id="wishlist" className={styles.wishlist} aria-labelledby="wishlist-heading">
       <div className="container">
         <div className={styles.header}>
           <div className={styles.icon}>
